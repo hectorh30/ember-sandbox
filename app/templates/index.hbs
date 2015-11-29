@@ -1,1 +1,7 @@
-{{outlet}}
+<ul>
+    {{#each model as |color|}}
+        <li>{{color}}</li>
+    {{/each}}
+</ul>
+
+{{#link-to 'users'}}Go to users{{/link-to}}
