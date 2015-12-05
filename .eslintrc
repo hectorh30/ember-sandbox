@@ -1,8 +1,17 @@
 {
+    "extends": "eslint:recommended",
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true
+    },
+    "ecmaFeatures": {
+        "modules": true
+    },
     "rules": {
         "indent": [
             2,
-            4
+            2
         ],
         "quotes": [
             2,
@@ -16,14 +25,5 @@
             2,
             "always"
         ]
-    },
-    "ecmaFeatures": {
-        "modules": true
-    },
-    "env": {
-        "es6": true,
-        "node": true,
-        "browser": true
-    },
-    "extends": "eslint:recommended"
+    }
 }
