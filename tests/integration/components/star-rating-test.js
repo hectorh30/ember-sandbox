@@ -1,25 +1,19 @@
+import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('star-rating', 'Integration | Component | star rating', {
+moduleForComponent('star-rating', 'starRatingComponent', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
+test('Renders the full and empty stars correctly', function(assert) {
+  assert.expect(1);
 
-  this.render(hbs`{{star-rating}}`);
+  var song = Ember.Object.create({ rating: 4 });
+  this.set('song', song);
+  this.set('maxRating', 5);
 
-  assert.equal(this.$().text().trim(), '');
+  this.render(hbs`{{star-rating item=song rating=song.rating maxRating=maxRating}}`);
 
-  // Template block usage:" + EOL +
-  this.render(hbs`
-    {{#star-rating}}
-      template block text
-    {{/star-rating}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.glyphicon-star').length, 4, 'The right amount of full stars is rendered');
 });
