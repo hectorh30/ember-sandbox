@@ -39,6 +39,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.contentSecurityPolicy = contentSecurityPolicy;
     ENV.contentSecurityPolicy['script-src'] = "'self' 'unsafe-eval' 192.168.250.206:*";
+    ENV.contentSecurityPolicy['connect-src'] += ' ws://192.168.250.206:*';
   }
 
   if (environment === 'test') {
