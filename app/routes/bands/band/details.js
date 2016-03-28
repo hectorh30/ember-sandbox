@@ -14,7 +14,9 @@ export default Ember.Route.extend({
         leave;
 
       if (controller.get('isEditing')) {
-        leave = window.confirm('You have unsaved changes. Are you sure you want to leave?');
+        leave = window.confirm(
+          'You have unsaved changes. Are you sure you want to leave?'
+        );
 
         if (leave) {
           controller.set('isEditing', false);
